@@ -4,7 +4,7 @@ import { AriaLabelInfo } from "./content_script";
 
 function saveContentToFile(content: string, filename: string): boolean {
   const pom = document.createElement("a");
-  pom.setAttribute("href", "data:text/plain;charset=utf-8," + content)
+  pom.setAttribute("href", "data:text/csv;charset=utf-8," + content)
   pom.setAttribute("download", filename)
 
   if (document.createEvent) {
@@ -21,12 +21,12 @@ function saveContentToFile(content: string, filename: string): boolean {
 function generateCsvFrom(elements: AriaLabelInfo[] | undefined): string {
   let result = "Date,Time,Event Name,Calendar,Status,Location\n";
   elements?.forEach(({ariaLabel}) => {
-    const details = ariaLabel
+    const details = ariaLabel      
       .split(",")
       .map((d) => d.trim());
-    result += `${details[5]} ${details[6]},${details[0]},${details[1]},${details[2]},${details[3]},${details[4]}\n`;
+    result += `${details[5]} ${details[6] || ""},${details[0]},${details[1]},${details[2]},${details[3]},${details[4]}\n`;
   });
-  return result;
+  return escape(result);
 }
 
 $(function () {
