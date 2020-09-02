@@ -1,0 +1,70 @@
+.title-container {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+  }
+  .title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: 10px
+  }
+  .main-container {
+    padding: 3px;
+    width: 210px;
+  }
+  .options-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .option {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+  .option-error {
+    display: none;
+    opacity: "0";
+    background-color: lightcoral;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    opacity: 0;
+  }
+  .option-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  .option-counter {
+    background: dodgerblue;
+    font-size: 11px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 2px;
+    margin-right: 10px;
+    align-content: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .option-text {
+    size: 0.8rem;
+    font-weight: 400;
+  }
+  .option:hover {
+    background-color: #eee;
+    cursor: pointer;
+  }
+  .option-error:hover {
+    background-color: lightcoral;
+  }
+  .elementToFadeInAndOut {
+    animation: fadeInOut 7s linear forwards;
+  }
+
+  @keyframes fadeInOut {
+    from { opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    to { opacity: 0; }
+  }

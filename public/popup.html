@@ -1,24 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <title>Google Calendar to Csv's Popup</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="js/vendor.js"></script>
   </head>
   <body>
-    <ul style="min-width: 700px;">
-    <li>Current URL: <span id="url"></span></li>
-    <li>Current Time: <span id="time"></span></li>
-    </ul>
-    <button id="countUp">count up</button>
-    <button id="changeBackground">change background</button>
+    <div class="main-container">
+      <div class="title-container">
+        <div class="main-icon">
+          <img src="icon-48x48.png" />
+        </div>
+        <h3 class="title">Calendar to Csv</h3>
+      </div>
+      <hr />
+      <ul class="options-list">
+        <li id="export-error" class="option option-error elementToFadeInAndOut">
+          <image class="option-icon" src="./exclamation-icon.svg" />
+          <div class="option-text">There's no events to export</div>
+        </li>
+        <li id="export-csv" class="option">
+          <image class="option-icon" src="./csv-icon.svg" />
+          <div id="event-counter" class="option-counter">0</div>
+          <div class="option-text">Export events to csv</div>
+        </li>
+      </ul>
+      <div id="test"></div>
+    </div>
     <script src="js/popup.js"></script>
   </body>
 </html>
-
